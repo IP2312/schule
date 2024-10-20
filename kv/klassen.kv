@@ -1,0 +1,56 @@
+<KlassenScreen>:
+    name: 'klassen'
+    display_klassen: display_klassen
+    input_klasse: input_klasse
+    canvas.before:
+        Color:
+            rgba: 0.8, 0.8, 0.8, 1  # Light blue background color
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: 'Klasse hinzufügen'
+            size_hint_y: 0.2
+            font_size: 30
+
+        BoxLayout:
+            orientation: 'horizontal'
+            
+            BoxLayout:
+                orientation: 'vertical'
+                BoxLayout:
+                    orientation: 'vertical'   
+                    id: display_klassen
+                    spacing: 10
+                    padding:20
+                    
+                
+
+            BoxLayout:
+                orientation: 'vertical'
+                TextInput:
+                    id: input_klasse
+                    hint_text: 'Enter class name'
+                Button:
+                    text: 'Add Class'
+                    size_hint_y: None
+                    height: 50
+                    on_release: root.add_class()
+                TextInput:
+                    hint_text: 'yyyy/yyyy'
+                    id: input_jahrgang
+                Button:
+                    text: 'Add Jahrgang'
+                    size_hint_y: None
+                    height: 50
+                    on_release: root.add_year()
+
+                Button:
+                    text: 'Go to Home'
+                    size_hint_y: None
+                    height: 50
+                    on_release: root.manager.current = 'home'

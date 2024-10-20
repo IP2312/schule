@@ -1,0 +1,44 @@
+<HomeScreen>:
+    name: 'home'
+    display_klassen: display_klassen
+    title: title
+    canvas.before:
+        Color:
+            rgba: 0.8, 0.8, 0.8, 1  # Light blue background color
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: 'Home'
+            id: title
+            size_hint_y: 0.2
+            font_size: 30
+        BoxLayout:
+            orientation: 'horizontal'
+            BoxLayout:
+                orientation: 'vertical'
+                id:display_klassen
+                spacing: 10
+                padding: 20
+                font_size: 30
+
+            BoxLayout:
+                orientation: 'vertical'
+                spacing: 10
+                padding: 20
+
+                Button:
+                    text: "Jahrgang"
+                    id: jahrgang
+                    size_hint_y: None
+                    height: 50
+                    on_release: root.open_dropdown(self)
+
+                Button:
+                    text: 'Klasse bearbeiten'
+                    size_hint_y: None
+                    height: 50
+                    on_release: root.manager.current = 'klassen'

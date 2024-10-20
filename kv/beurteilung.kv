@@ -1,0 +1,26 @@
+<BeurteilungsScreen>:
+    name: 'beurteilung'
+    kl: kl
+
+    BoxLayout:
+        orientation: 'vertical'
+
+        Label:
+            text: 'Beurteilung'
+            id: kl
+            size_hint_y: 0.1   # Reduced height size for the label
+            font_size: 30
+            color: 0, 0, 0, 1  # Red color for visibility
+
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint_y: 0.6   # Adjust space for the table
+
+        BoxLayout:
+            orientation: 'vertical'
+
+        Button:
+            text: 'Return to Home'
+            size_hint_y: None
+            height: 50
+            on_release: root.manager.current = 'home'
